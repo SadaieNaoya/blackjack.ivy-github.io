@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 文字エンコーディングおよびビューポートの設定 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブラックジャック</title>
+    <!-- 外部CSSファイルのリンク -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ページのコンテンツ全体をラップするコンテナ -->
+    <div class="container">
+        <header>
+            <!-- ゲームタイトル -->
+            <h1 id="title">ブラックジャック</h1>
+        </header>
+        <main>
+            <!-- ゲーム開始ボタン -->
+            <div id="playButton" class="text">Play</div>
+
+            <!-- プレイヤーとディーラーの合計表示エリア -->
+            <div id="gameInfo" style="display: none;"> <!-- 初期状態で非表示 -->
+                <div id="dealerSumDisplay" class="sumDisplay">ディーラー: 0</div>
+                <div id="playerSumDisplay" class="sumDisplay">プレイヤー: 0</div>
+            </div>
+
+            <!-- HITとSTANDボタンのエリア -->
+            <div id="gameControls" style="display: none;">
+                <button id="hitButton" class="button">HIT</button>
+                <button id="standButton" class="button">STAND</button>
+            </div>
+
+            <!-- ゲーム結果表示エリア -->
+            <div id="resultDisplay" style="display: none;">
+                <p id="resultMessage" class="resultMessage"></p> <!-- 結果メッセージの表示 -->
+                <button id="resetButton" class="button">OK</button> <!-- ゲームリセットボタン -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ローディング動画の設定 -->
+    <video id="loadingVideo" src="img/coin3.mp4" preload="auto"></video>
+
+    <!-- 外部JavaScriptファイルの読み込み -->
+    <script src="js/index.js"></script>
+</body>
+</html>

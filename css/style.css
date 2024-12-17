@@ -1,0 +1,204 @@
+body {
+  /* ページ全体のスタイル: 余白をなくし、高さを100vhに設定 */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 背景画像の設定 */
+  background-image: url("../img/23007652_m.jpg");
+  background-size: cover; /* 背景画像を画面いっぱいに表示 */
+  background-position: center; /* 背景の位置を中央に */
+  background-repeat: no-repeat; /* 背景画像を繰り返さない */
+}
+
+.container {
+  /* コンテンツを中央に配置するコンテナ */
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#title {
+  /* ゲームタイトルのスタイル */
+  font-size: 3.75em; /* タイトル文字のサイズ */
+  padding: 15px 30px; /* タイトル周囲の余白 */
+  background-color: rgb(50, 184, 104); /* 背景色 */
+  color: white; /* テキスト色 */
+  display: inline-block;
+  border-radius: 50px; /* 角丸 */
+}
+
+#playButton {
+  /* プレイボタンのスタイル */
+  font-size: 3.75em; /* ボタン文字サイズ */
+  font-weight: bold;
+  color: #ffffff; /* 文字色 */
+  cursor: pointer; /* クリック可能なカーソル表示 */
+}
+
+#gameInfo {
+  /* プレイヤーとディーラーの合計表示エリア */
+  display: flex; /* 水平に配置 */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 15px;
+}
+
+.sumDisplay {
+  /* 合計表示のボックススタイル */
+  color: white;
+  background-color: black; /* 背景色 */
+  padding: 7.5px 15px;
+  border-radius: 5px; /* 角丸 */
+}
+
+#dealerSumDisplay, #playerSumDisplay {
+  /* ディーラーとプレイヤーの合計表示位置 */
+  position: absolute;
+  top: 10%;
+  font-size: 2.7em; /* 文字サイズ */
+}
+
+#dealerSumDisplay {
+  /* ディーラーの合計位置 */
+  right: 10%; /* 画面の右側に配置 */
+}
+
+#playerSumDisplay {
+  /* プレイヤーの合計位置 */
+  left: 10%; /* 画面の左側に配置 */
+}
+
+#gameControls {
+  /* HITとSTANDボタンエリア */
+  display: flex; /* 水平配置 */
+  justify-content: center;
+  gap: 30px; /* ボタン間の間隔 */
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%); /* 中央揃え */
+}
+
+.button {
+  /* 共通ボタンスタイル */
+  padding: 15px 22.5px;
+  font-size: 1.5em;
+  cursor: pointer; /* クリック可能 */
+  background-color: #444; /* ボタン背景色 */
+  color: #fff; /* 文字色 */
+  border: none;
+  border-radius: 5px; /* 角丸 */
+  transition: background-color 0.3s; /* ホバー時の背景色変化 */
+}
+
+.button:hover {
+  /* ボタンホバー時のスタイル */
+  background-color: #666; /* ホバー時に色を少し明るく */
+}
+
+#resultDisplay {
+  /* ゲーム結果の表示エリア */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8em; /* 結果表示の文字サイズ */
+  color: #333; /* 文字色 */
+  display: flex;
+  flex-direction: column; /* 縦並びに配置 */
+  align-items: center;
+}
+
+#loadingVideo {
+  /* ローディング動画のスタイル */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* 動画を画面いっぱいに合わせる */
+  display: none; /* 初期状態は非表示 */
+  z-index: 9999; /* 最前面に表示 */
+}
+
+.resultMessage {
+  /* ゲーム結果メッセージのスタイル */
+  background-color: black; /* 背景色 */
+  color: white; /* 文字色 */
+  padding: 15px;
+  border-radius: 5px; /* 角丸 */
+}
+
+/* スマホ向けのレイアウト調整 */
+@media (max-width: 768px) {
+  /* 画面幅が768px以下のときのスタイル */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px; /* スマホ画面では余白を狭くする */
+  }
+
+  #title {
+    /* タイトルのスタイル調整 */
+    font-size: 1.5em; /* タイトル文字サイズを小さくする */
+    padding: 10px 20px; /* 余白を調整 */
+    white-space: nowrap; /* 改行を禁止 */
+  }
+
+  #playButton {
+    /* プレイボタンのサイズ調整 */
+    font-size: 2em;
+  }
+
+  #gameInfo {
+    /* 合計表示エリアの縦並び調整 */
+    flex-direction: column; /* 縦並びに変更 */
+    gap: 10px; /* 間隔を狭くする */
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+  }
+
+  .sumDisplay {
+    /* 合計表示ボックスのスタイル調整 */
+    font-size: 1.5em; /* 文字サイズを縮小 */
+    padding: 5px; /* 余白を調整 */
+    position: static; /* デフォルト位置に戻す */
+  }
+
+  #dealerSumDisplay, #playerSumDisplay {
+    /* 合計表示位置のリセット */
+    position: static; /* 固定位置を解除 */
+    font-size: 1.5em; /* 文字サイズを縮小 */
+  }
+
+  #gameControls {
+    /* ボタンエリアのスタイル調整 */
+    bottom: 20%; /* ボタンを少し上に配置 */
+    flex-direction: row; /* ボタンを横並びにする */
+    align-items: center;
+  }
+
+  .button {
+    /* ボタンサイズの縮小 */
+    font-size: 1em;
+    padding: 8px 12px; /* 余白を小さくする */
+  }
+
+  #resultDisplay {
+    /* 結果表示エリアのサイズ調整 */
+    font-size: 1em; /* 文字サイズを小さくする */
+    top: 50%; /* 表示位置を中央に調整 */
+  }
+}
