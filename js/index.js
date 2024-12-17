@@ -55,7 +55,6 @@ video.onended = function () {
     gameInfo.style.display = 'flex'; // ゲーム情報を表示
     gameControls.style.display = 'flex'; // ゲーム操作を表示
     dealerSUM = drawCard(); // ディーラー初期カード
-    playerSUM = drawCard(); // プレイヤー初期カード
     
     // モバイル画面向けの調整
     if (window.innerWidth <= 480) {
